@@ -14,7 +14,7 @@ class UserRequest extends BaseRequest
     {
 
         return [
-            'user_name' => ['required', "max:20", new AlphaUserName],
+            'name' => ['required', "max:20", new AlphaUserName],
             'email' => ['unique:users,email,'.(optional($this->user)->id ?: 'NULL')],
         ];
     }
@@ -27,7 +27,7 @@ class UserRequest extends BaseRequest
             'posted_at' => Carbon::parse($this->input('posted_at')),
             'slug' => Str::slug($this->input('title'), '_'),
             'remark' => Str::limit(Str::random(60), 20),
-            'sex' => Str::contains($this->input('user_name') ?? '', ['li', 'aa'])
+            'sex' => Str::contains($this->input('name') ?? '', ['li', 'aa'])
         ]);
 
     }

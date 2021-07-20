@@ -25,8 +25,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    return  User::first();
+   $user=User::latest()->first();
+    return  $user;
 });
 
 

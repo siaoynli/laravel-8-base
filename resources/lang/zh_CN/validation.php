@@ -10,7 +10,7 @@ return [
     'alpha_user_name'=> ':attribute不能有特殊字符.',
 
     'attributes' => [
-        'user_name' => '用户名',
+        'name' => '用户名',
         'email' => '邮箱',
     ],
 ];
