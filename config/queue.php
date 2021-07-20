@@ -64,7 +64,9 @@ return [
 
         'redis' => [
             'driver' => 'redis',
-            'connection' => 'default',
+            //自定义队列db
+            'connection' => 'queue',
+            //默认队列
             'queue' => env('REDIS_QUEUE', 'default'),
             'retry_after' => 90,
             'block_for' => null,

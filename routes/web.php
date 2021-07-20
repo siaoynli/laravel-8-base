@@ -9,8 +9,8 @@
  * @Copyright: (c) 2021 http://www.hangzhou.com.cn All rights reserved
  */
 
-use App\Models\Product;
-use App\Models\User;
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +25,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-   $user=User::latest()->first();
-    return  $user;
+    return  "ok";
 });
 
 
