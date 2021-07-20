@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use App\Casts\JsonCast;
+use App\Scopes\UserScope;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -16,6 +16,14 @@ use Illuminate\Support\Str;
 class User extends  Authenticatable implements MustVerifyEmail
 {
     use HasFactory,Notifiable;
+
+
+    //全局
+    protected static function boot(): void
+    {
+        parent::boot();
+        static::addGlobalScope(new UserScope);
+    }
 
 
     protected $fillable = [

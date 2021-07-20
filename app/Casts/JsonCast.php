@@ -17,7 +17,7 @@ class JsonCast implements CastsAttributes
      */
     public function get($model, $key, $value, $attributes)
     {
-        return json_decode($value);
+        return filled($value) ? json_decode($value) : "{}";
     }
 
     /**
@@ -29,8 +29,8 @@ class JsonCast implements CastsAttributes
      * @param  array  $attributes
      * @return mixed
      */
-    public function set($model, $key, $value, $attributes):string
+    public function set($model, $key, $value, $attributes): string
     {
-        return json_encode($value,true);
+        return json_encode($value, true);
     }
 }

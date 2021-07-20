@@ -25,8 +25,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return  "ok";
+    return  version();
 });
 
 
 Route::post('/user', "UserController@create");
+Route::get('/user', "UserController@index");
+Route::get('/user/show', "UserController@show");

@@ -44,6 +44,8 @@ class Handler extends ExceptionHandler
         });
     }
 
+
+    //todo 待优化
     public function render($request, Throwable $e)
     {
         $e = $this->prepareException($e);

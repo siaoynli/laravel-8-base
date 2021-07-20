@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('registered_at')->nullable();
             $table->string('password');
-            $table->string('option',255);
+            $table->string('option',255)->nullable();
             $table->integer('role_id')->default(0)->comment("是否是管理员");
             $table->rememberToken();
             $table->timestamps();
