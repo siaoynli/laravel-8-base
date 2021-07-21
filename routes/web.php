@@ -29,6 +29,6 @@ Route::get('/', function () {
 });
 
 
-Route::post('/user', "UserController@create");
-Route::get('/user', "UserController@index");
-Route::get('/user/show', "UserController@show");
+Route::post('/user', [\App\Http\Controllers\UserController::class],"create");
+Route::get('/user',  [\App\Http\Controllers\UserController::class],"index");
+Route::get('/user/show',  [\App\Http\Controllers\UserController::class],"show");
