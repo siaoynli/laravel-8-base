@@ -32,3 +32,5 @@ Route::get('/', function () {
 Route::post('/user', [\App\Http\Controllers\UserController::class],"create");
 Route::get('/user',  [\App\Http\Controllers\UserController::class],"index");
 Route::get('/user/show',  [\App\Http\Controllers\UserController::class],"show");
+
+Route::get("/search",\App\Http\Controllers\SearchController::class);
